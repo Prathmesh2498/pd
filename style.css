@@ -144,7 +144,6 @@ a:hover {
 
 /* Blog content styles */
 .blog-content {
-    width: 50%;
     padding: 20px; /* Add padding for better readability */
     border-radius: 8px; /* Rounded corners for aesthetic appeal */
     font-size: 1.4em;
