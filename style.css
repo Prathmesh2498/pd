@@ -163,6 +163,7 @@ footer {
     margin: auto;
     padding-top: 10px; /* Add padding to prevent content from being hidden behind the fixed navbar */
     font-size: 1.3em;
+    margin-bottom: 2%;
 }
 
 .icon {
