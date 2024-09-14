@@ -30,6 +30,8 @@ function loadMarkdown(filePath, contentClass = 'container') {
             const html = markdownToHTML(data);
             if (contentClass != 'container') {
                 contentClass = 'container ' + contentClass;
+            } else {
+                contentClass ='';
             }
             document.getElementById("content").innerHTML = `<div class="${contentClass}">${html}</div>`;
         });

@@ -9,8 +9,9 @@ body {
 
 /* Center align the content to 65% of the screen width */
 .container {
+
     width: 65%;
-    margin: 0 auto;
+    margin: 2% auto;
     padding-top: 10px; /* Add padding to prevent content from being hidden behind the fixed navbar */
 }
 
