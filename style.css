@@ -63,7 +63,7 @@ header h2 {
     margin: 5px;
     padding: 3px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 header a {
@@ -83,7 +83,7 @@ section {
 section h2 {
     border-bottom: 2px solid #0073e6;
     padding-bottom: 10px;
-    font-size: 1.8em;
+    font-size: 1.4em;
     margin-bottom: 15px;
 }
 
@@ -146,12 +146,16 @@ a:hover {
 .blog-content {
     padding: 20px; /* Add padding for better readability */
     border-radius: 8px; /* Rounded corners for aesthetic appeal */
-    font-size: 1.4em;
+    font-size: 1.2rem;
 }
 
 .blog-content p {
     margin: 0;
     padding: 0;
+}
+
+.blog-content ul {
+    margin: 0 !important;
 }
 
 footer {
@@ -174,7 +178,7 @@ footer {
     margin-bottom: 30px;
     border-bottom: 1px solid #44AF69;
     padding-bottom: 20px;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 .project:last-child {
     border-bottom: none;

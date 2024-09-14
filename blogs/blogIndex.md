@@ -1,7 +1,5 @@
-# Blogs Index
-
 I write two blogs:
-- [Embracing Nuances](https://prathmesh6.substack.com/subscribe): Training for bein a better thinker
+- [Embracing Nuances](https://prathmesh6.substack.com/subscribe): Training for being a better thinker
     - [On being obsessed, reciprocity, physics alternative, a fun trip, etc](https://prathmesh6.substack.com/p/issue-9-on-being-obsessed-reciprocity)
     - [On home and family](https://prathmesh6.substack.com/p/newsletter-32-on-home-and-family)
     - [Doing hard things](https://prathmesh6.substack.com/p/newsletter-30-doing-hard-things)
