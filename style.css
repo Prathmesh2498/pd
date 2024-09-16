@@ -224,3 +224,12 @@ footer {
     font-size: 12px;
     color: #44AF69;
 }
+
+.proj-links-container{
+    display: flex;
+    justify-content: center;
+}
+
+.blog-links {
+    margin: 1%;
+}
