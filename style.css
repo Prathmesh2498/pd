@@ -11,7 +11,7 @@ body {
 .container {
 
     width: 65%;
-    margin: 2% auto;
+    margin: 0px auto;
     padding-top: 10px; /* Add padding to prevent content from being hidden behind the fixed navbar */
 }
 
