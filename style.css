@@ -11,7 +11,7 @@ body {
 .container {
     width: 65%;
     margin: 0px auto;
-    padding-top: 10px; /* Add padding to prevent content from being hidden behind the fixed navbar */
+    margin-top: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     background-color: #0d1117;
     padding: 10px 0;
-    width: 65%;
+    width: 100%;
     top: 0;
     z-index: 1000;
     margin: 0 auto;
