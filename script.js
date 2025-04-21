@@ -4,15 +4,26 @@ window.onload = function () {
 
 function showTab(tab) {
     const content = document.getElementById("content");
-    
+
+    // Remove 'active' from all nav links
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Add 'active' to the clicked link
+    const clickedLink = Array.from(document.querySelectorAll('.navbar a')).find(link => link.textContent.toLowerCase() === tab);
+    if (clickedLink) clickedLink.classList.add('active');
+
+    // Load content based on tab
     if (tab === "home") {
         loadHTML('home.html');
-    } else if (tab === "resume") {
+    } else if (tab === "projects") {
         loadMarkdown('resume/resume.html');
     } else if (tab === "blogs") {
-        loadMarkdown('blogs/blogIndex.md', 'blog-content'); // You can load the first blog as a default
+        loadMarkdown('blogs/blogIndex.md', 'blog-content');
     }
 }
+
 
 function loadHTML(filePath) {
     fetch(filePath)
