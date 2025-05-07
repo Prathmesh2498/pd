@@ -1,0 +1,86 @@
+/* Home page specific styles */
+.profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 2rem auto;
+    border: 3px solid var(--accent-primary);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h2 {
+    margin: 1rem 0;
+    color: var(--text-primary);
+    font-size: 2rem;
+}
+
+.introduction {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.introduction p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.skills-section {
+    margin: 2rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.skill-category h3 {
+    color: var(--accent-primary);
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-list i {
+    color: var(--accent-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+} 

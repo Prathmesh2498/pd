@@ -4,6 +4,7 @@ window.onload = function () {
 
 function showTab(tab) {
     const content = document.getElementById("content");
+    const body = document.body;
 
     // Remove 'active' from all nav links
     document.querySelectorAll('.navbar a').forEach(link => {
@@ -16,14 +17,16 @@ function showTab(tab) {
 
     // Load content based on tab
     if (tab === "home") {
+        body.classList.remove('blog-page');
         loadHTML('home.html');
     } else if (tab === "projects") {
+        body.classList.remove('blog-page');
         loadMarkdown('resume/resume.html');
     } else if (tab === "blogs") {
+        body.classList.add('blog-page');
         loadMarkdown('blogs/blogIndex.md', 'blog-content');
     }
 }
-
 
 function loadHTML(filePath) {
     fetch(filePath)
