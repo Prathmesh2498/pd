@@ -18,10 +18,10 @@ function showTab(tab) {
     // Load content based on tab
     if (tab === "home") {
         body.classList.remove('blog-page');
-        loadHTML('home.html');
+        loadHTML('components/home.html');
     } else if (tab === "projects") {
         body.classList.remove('blog-page');
-        loadMarkdown('resume/resume.html');
+        loadMarkdown('components/resume.html');
     } else if (tab === "blogs") {
         body.classList.add('blog-page');
         loadMarkdown('blogs/blogIndex.md', 'blog-content');

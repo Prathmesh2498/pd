@@ -323,7 +323,7 @@ a.addUnderline {
     .project {
         flex-direction: column;
         text-align: center;
-    }
+}
 
     .project-image {
         width: 100%;
