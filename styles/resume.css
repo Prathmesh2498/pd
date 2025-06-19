@@ -69,6 +69,7 @@ body {
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .project::before {
@@ -273,4 +274,10 @@ body {
 
 .experience-item li {
     margin: 0.3rem 0;
+}
+
+/* Override footer styles for resume page */
+.resume-page .footer {
+    position: static !important;
+    margin-top: 40px;
 } 
