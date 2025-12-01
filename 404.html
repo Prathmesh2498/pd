@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .terminal {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot-red { background-color: #ff5f56; }
+        .dot-yellow { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
+        .terminal-title {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+        .terminal-body {
+            line-height: 1.8;
+        }
+        .prompt {
+            color: #58a6ff;
+        }
+        .error-code {
+            color: #f85149;
+            font-weight: 600;
+        }
+        .path {
+            color: #c9d1d9;
+        }
+        .message {
+            color: #8b949e;
+            margin: 1.5rem 0;
+        }
+        .redirect {
+            color: #58a6ff;
+            margin-top: 1.5rem;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        .link {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid #58a6ff;
+            transition: color 0.3s ease;
+        }
+        .link:hover {
+            color: #79c0ff;
+        }
+    </style>
+    <script>
+        // GitHub Pages 404.html - redirect to index.html for SPA routing
+        const path = window.location.pathname;
+        const hash = window.location.hash;
+        
+        // Redirect after a short delay to show the 404 message
+        setTimeout(() => {
+            window.location.replace('/' + hash);
+        }, 3000);
+    </script>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot dot-red"></div>
+            <div class="terminal-dot dot-yellow"></div>
+            <div class="terminal-dot dot-green"></div>
+            <div class="terminal-title">404.html</div>
+        </div>
+        <div class="terminal-body">
+            <div>
+                <span class="prompt">$</span> 
+                <span class="path">cd</span> 
+                <span class="path">/</span><span class="error-code">404</span>
+            </div>
+            <div class="error-code" style="margin-top: 1rem;">
+                Error 404: Page not found
+            </div>
+            <div class="message">
+                The requested path <span class="path">'<span id="error-path"></span>'</span> does not exist.
+            </div>
+            <div class="message">
+                Redirecting to <a href="/" class="link">home</a> in <span id="countdown">3</span> seconds...
+            </div>
+            <div class="redirect">
+                <span class="prompt">></span> Redirecting...
+            </div>
+        </div>
+    </div>
+    <script>
+        // Show the path that caused the 404
+        document.getElementById('error-path').textContent = window.location.pathname;
+        
+        // Countdown
+        let count = 3;
+        const countdownEl = document.getElementById('countdown');
+        const interval = setInterval(() => {
+            count--;
+            if (count > 0) {
+                countdownEl.textContent = count;
+            } else {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+

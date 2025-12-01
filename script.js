@@ -1,10 +1,49 @@
 window.onload = function () {
-    showTab('home'); // Load home by default
+    // Clean up URL - remove index.html if present
+    if (window.location.pathname.includes('index.html')) {
+        const cleanPath = window.location.pathname.replace(/index\.html$/, '') || '/';
+        window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+    }
+    
+    // Check for hash on page load
+    const hash = window.location.hash.substring(1); // Remove the #
+    if (hash) {
+        showTab(hash);
+    } else {
+        showTab('home'); // Load home by default
+    }
 };
+
+// Listen for hash changes (back/forward buttons)
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+        showTab(hash);
+    }
+});
 
 function showTab(tab) {
     const content = document.getElementById("content");
     const body = document.body;
+
+    // Valid routes
+    const validRoutes = ['home', 'projects', 'blogs', 'blog-index'];
+    
+    // If invalid route, redirect to home
+    if (tab && !validRoutes.includes(tab)) {
+        window.location.hash = 'home';
+        showTab('home');
+        return;
+    }
+
+    // Update URL hash with clean URL (no index.html)
+    if (tab === 'home' && !window.location.hash) {
+        // Don't add hash for home on initial load
+    } else {
+        // Ensure we use clean URL without index.html
+        const cleanPath = window.location.pathname.replace(/index\.html$/, '') || '/';
+        window.history.replaceState(null, '', cleanPath + window.location.search + '#' + tab);
+    }
 
     // Remove 'active' from all nav links
     document.querySelectorAll('.navbar a').forEach(link => {
@@ -50,17 +89,7 @@ function loadHTML(filePath) {
             if (filePath === 'components/blog-index.html') {
                 loadBlogIndex();
             }
-            // If blog.html was loaded, attach event listener to index link
-            if (filePath === 'components/blog.html') {
-                const content = document.getElementById("content");
-                const indexLink = content.querySelector('.blog-index-link');
-                if (indexLink) {
-                    indexLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        showTab('blog-index');
-                    });
-                }
-            }
+            // If blog.html was loaded, the hash-based routing will handle the link
         });
 }
 
